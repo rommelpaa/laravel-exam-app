@@ -18,8 +18,9 @@ class JokeController extends Controller
     {
 
         $limit = $request->input('limit', 3);
+        $url = $request->input('url', 'jokes/programming/ten');
 
-        $response = $this->JokeService->getRandomJoke($limit);
+        $response = $this->JokeService->getRandomJoke($limit, $url);
 
         return response()->json($response, $response['status_code']);
     }

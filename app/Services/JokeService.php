@@ -17,10 +17,10 @@ class JokeService
         ]);
     }
 
-    public function getRandomJoke($limit)
+    public function getRandomJoke($limit, $url = 'jokes/programming/ten')
     {
         try {
-            $response = $this->client->get('jokes/programming/ten');
+            $response = $this->client->get($url);
             $jokeData = json_decode($response->getBody(), true);
 
             $joke = collect($jokeData)->random($limit);
