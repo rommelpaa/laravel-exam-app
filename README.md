@@ -34,19 +34,19 @@ The app demonstrates building a basic webpage from scratch with **Tailwind CSS**
 Your app should now be running at http://127.0.0.1:8000.
 
 ## MVC / Project Structure
-```
-app
-├─ Http/
-│  └─ Controllers/
-│     └─ JokeController.php      # Handles HTTP requests and responses
-├─ Services/
-│  └─ JokeService.php            # Contains logic to fetch random jokes using Guzzle
-resources/
-├─ views/
-│  └─ jokes
-|    └─index.blade.php          # Displays the webpage with jokes
-public/
-├─ index.php                     # Entry point
+    ```
+    app
+    ├─ Http/
+    │  └─ Controllers/
+    │     └─ JokeController.php      # Handles HTTP requests and responses
+    ├─ Services/
+    │  └─ JokeService.php            # Contains logic to fetch random jokes using Guzzle
+    resources/
+    ├─ views/
+    │  └─ jokes
+    |    └─index.blade.php          # Displays the webpage with jokes
+    public/
+    ├─ index.php                     # Entry point
 
 ## How it works
 1. Controller (JokeController)
