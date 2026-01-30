@@ -1,64 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Laravel Exam App
+simple Laravel application that fetches programming jokes from the **Official Joke API** using **Guzzle**.  
+The app demonstrates building a basic webpage from scratch with **Tailwind CSS** via CDN, and automatically displays a random joke on page load or when the user clicks a button.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Tech Stack
 
-## About Laravel
+- **PHP 8.2**  
+- **Laravel v8.83.29**  
+- **Composer 2.8.8**  
+- **Tailwind CSS** (via CDN)  
+- **Guzzle HTTP Client**  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Requirements
+- Git
+- PHP 8.2 or higher
+- Laravel v8.83.29
+- Composer 2.8.8
+- Internet connection (for Tailwind CDN and Joke API)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Setup Local Environment
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/rommelpaa/laravel-exam-app.git
+2. Navigate into the project folder::
+    cd laravel-exam-app
+3. Install Dependencies
+    composer install
+4. Serve the application locally:
+    php artisan serve
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Your app should now be running at http://127.0.0.1:8000.
 
-## Learning Laravel
+## MVC / Project Structure
+app
+├─ Http/
+│  └─ Controllers/
+│     └─ JokeController.php      # Handles HTTP requests and responses
+├─ Services/
+│  └─ JokeService.php            # Contains logic to fetch random jokes using Guzzle
+resources/
+├─ views/
+│  └─ jokes
+|    └─index.blade.php          # Displays the webpage with jokes
+public/
+├─ index.php                     # Entry point
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## How it works
+1. Controller (JokeController)
+    - Receives requests from the user (page load or button click).
+    - Calls JokeService to fetch jokes.
+    - Returns the jokes as JSON to the frontend.
+2. Service (JokeService)
+    - Encapsulates all logic for fetching jokes from the Official Joke API using Guzzle.
+    - Returns a random set of jokes, with a default limit of 3.
+3. View (jokes.blade.php)
+    - Displays the frontend page.
+    - Uses Tailwind CSS for styling.
+    - Calls the API via JavaScript fetch to show jokes dynamically.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Usage: 
+- Visit the homepage to see a random programming joke.
+- Click the "Show Random Joke" button to fetch a new joke.
+- Jokes are fetched automatically on page load as well.
