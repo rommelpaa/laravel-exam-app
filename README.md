@@ -21,11 +21,14 @@ The app demonstrates building a basic webpage from scratch with **Tailwind CSS**
 1. Clone the repository:
     ```bash
     git clone https://github.com/rommelpaa/laravel-exam-app.git
-2. Navigate into the project folder::
+2. Navigate into the project folder:
+    ```bash
     cd laravel-exam-app
 3. Install Dependencies
+    ```bash
     composer install
 4. Serve the application locally:
+    ```bash
     php artisan serve
 
 Your app should now be running at http://127.0.0.1:8000.
