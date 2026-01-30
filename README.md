@@ -56,7 +56,7 @@ Your app should now be running at http://127.0.0.1:8000.
 2. Service (JokeService)
     - Encapsulates all logic for fetching jokes from the Official Joke API using Guzzle.
     - Returns a random set of jokes, with a default limit of 3.
-3. View (jokes.blade.php)
+3. View (jokes.index.blade.php)
     - Displays the frontend page.
     - Uses Tailwind CSS for styling.
     - Calls the API via JavaScript fetch to show jokes dynamically.
