@@ -61,7 +61,17 @@ Your app should now be running at http://127.0.0.1:8000.
     - Uses Tailwind CSS for styling.
     - Calls the API via JavaScript fetch to show jokes dynamically.
 
-Usage: 
+## Usage
 - Visit the homepage to see a random programming joke.
 - Click the "Show Random Joke" button to fetch a new joke.
 - Jokes are fetched automatically on page load as well.
+
+## Testing
+This project includes a Feature test for the Joke API endpoint using Laravel’s testing tools.
+- test_get_random_jokes_returns_expected_structure
+- test_get_random_jokes_handles_api_failure
+
+## How to run tests
+    ```
+    php artisan test
+This will run all unit and feature tests, including the Joke API tests.
